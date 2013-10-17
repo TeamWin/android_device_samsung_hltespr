@@ -23,13 +23,13 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
-
+BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_15x24.h\"
 
 BOARD_KERNEL_CMDLINE :=  console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F
 BOARD_KERNEL_BASE :=  0x00000000
 #BOARD_FORCE_RAMDISK_ADDRESS := 0x02000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --dt device/samsung/hltetmo/dtb --tags_offset 0x01e00000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 BOARD_BOOTIMAGE_PARTITION_SIZE :=     0x105c0000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00D00000
@@ -44,6 +44,7 @@ TARGET_PREBUILT_KERNEL := device/samsung/hltespr/kernAl
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/hltespr/custombootimg.mk
 
 # TWRP specific build flags
 DEVICE_RESOLUTION := 1080x1920
@@ -67,3 +68,4 @@ TW_CRYPTO_MNT_POINT := "/data"
 TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,noauto_da_alloc,discard,journal_async_commit,errors=panic"
 TW_CRYPTO_FS_FLAGS := "0x00000406"
 TW_CRYPTO_KEY_LOC := "footer"
+TW_NO_EXFAT_FUSE := true
