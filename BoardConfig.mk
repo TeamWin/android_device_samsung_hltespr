@@ -27,9 +27,8 @@ BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_23x41.h\"
 
 BOARD_KERNEL_CMDLINE :=  console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F
 BOARD_KERNEL_BASE :=  0x00000000
-#BOARD_FORCE_RAMDISK_ADDRESS := 0x02000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --dt device/samsung/hltecan/dtb --tags_offset 0x01e00000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --dt device/samsung/hltespr/dtb --tags_offset 0x01e00000
 
 BOARD_BOOTIMAGE_PARTITION_SIZE :=     0x105c0000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00D00000
@@ -60,7 +59,7 @@ TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
-TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_JB_CRYPTO := true
 TW_INCLUDE_CRYPTO_SAMSUNG := true
 TW_CRYPTO_FS_TYPE := "ext4"
 TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p29"
@@ -69,3 +68,4 @@ TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,noauto_da_alloc,discard,journal_as
 TW_CRYPTO_FS_FLAGS := "0x00000406"
 TW_CRYPTO_KEY_LOC := "footer"
 TW_NO_EXFAT_FUSE := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
