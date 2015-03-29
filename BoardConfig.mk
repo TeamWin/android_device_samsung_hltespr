@@ -28,7 +28,7 @@ BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_23x41.h\"
 BOARD_KERNEL_CMDLINE :=  console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F
 BOARD_KERNEL_BASE :=  0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-#BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --dt device/samsung/hltespr/dtb --tags_offset 0x01e00000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --dt device/samsung/hltespr/dtb --tags_offset 0x01e00000
 
 BOARD_BOOTIMAGE_PARTITION_SIZE :=     0x105c0000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00D00000
@@ -36,15 +36,15 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-#TARGET_PREBUILT_KERNEL := device/samsung/hltespr/kernAl
+TARGET_PREBUILT_KERNEL := device/samsung/hltespr/kernAl
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/hltespr/mkbootimg.mk
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
-TARGET_KERNEL_CONFIG := msm8974_sec_defconfig
-TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_hlte_eur_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/hlte
+#BOARD_CUSTOM_BOOTIMG_MK := device/samsung/hltespr/mkbootimg.mk
+#BOARD_KERNEL_SEPARATED_DT := true
+#BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
+#TARGET_KERNEL_CONFIG := msm8974_sec_defconfig
+#TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+#TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_hlte_eur_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/hlte
 
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
